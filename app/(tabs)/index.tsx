@@ -8,12 +8,6 @@ interface Match {
   homeTeam: string;
   awayTeam: string;
   league: string;
-  memberCount: number;
-  members: Array<{
-    id: string;
-    name: string;
-    isAdmin: boolean;
-  }>;
   date: string;
   time: string;
   status: 'pending' | 'approved' | 'rejected';
@@ -24,6 +18,19 @@ interface Match {
     userName: string;
     homeScore: number;
     awayScore: number;
+  }>;
+}
+
+interface Group {
+  id: string;
+  name: string;
+  adminId: string;
+  adminName: string;
+  memberCount: number;
+  members: Array<{
+    id: string;
+    name: string;
+    isAdmin: boolean;
   }>;
 }
 
@@ -247,7 +254,7 @@ export default function HomeScreen() {
           </View>
           <Text style={styles.groupMembersTitle}>רשימת חברים:</Text>
           <View style={styles.membersList}>
-            {currentGroup.members.map((member) => (
+            {currentGroup.members.map((member: { id: string; name: string; isAdmin: boolean }) => (
               <View key={member.id} style={styles.memberItem}>
                 <Text style={styles.memberName}>{member.name}</Text>
                 {member.isAdmin && (

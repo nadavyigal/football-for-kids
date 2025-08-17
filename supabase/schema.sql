@@ -243,8 +243,8 @@ ON CONFLICT (external_id) DO NOTHING;
 INSERT INTO public.teams (name, short_name, league_id, external_id) VALUES
     ('ריאל מדריד', 'רמד', (SELECT id FROM public.leagues WHERE external_id = 'laliga'), 'real_madrid'),
     ('ברצלונה', 'ברצ', (SELECT id FROM public.leagues WHERE external_id = 'laliga'), 'barcelona'),
-    ('מנצ\'סטר סיטי', 'מסיטי', (SELECT id FROM public.leagues WHERE external_id = 'epl'), 'man_city'),
+    ('מנצ''סטר סיטי', 'מסיטי', (SELECT id FROM public.leagues WHERE external_id = 'epl'), 'man_city'),
     ('ליברפול', 'ליבר', (SELECT id FROM public.leagues WHERE external_id = 'epl'), 'liverpool'),
     ('בייארן מינכן', 'ביירן', (SELECT id FROM public.leagues WHERE external_id = 'bundesliga'), 'bayern'),
-    ('פריז סן ז\'רמן', 'פסז', (SELECT id FROM public.leagues WHERE external_id = 'ligue1'), 'psg')
+    ('פריז סן ז''רמן', 'פסז', (SELECT id FROM public.leagues WHERE external_id = 'ligue1'), 'psg')
 ON CONFLICT (external_id) DO NOTHING;
