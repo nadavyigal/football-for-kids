@@ -469,7 +469,7 @@ export const useRealtimeSubscription = (
   subscriptionFunction: () => RealtimeSubscription | null,
   dependencies: any[] = []
 ) => {
-  const React = require('react')
+  const React = require('react') as typeof import('react')
   const [subscription, setSubscription] = React.useState<RealtimeSubscription | null>(null)
 
   React.useEffect(() => {
